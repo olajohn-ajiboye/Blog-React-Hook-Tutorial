@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RecipeList from './components/RecipeList'
 
+
 function App() {
   const url = `https://api.myjson.com/bins/t7szj`
   const [recipes, setRecipes] = useState([])
@@ -13,7 +14,7 @@ function App() {
     fetchRecipe()
   })
   return (
-    <div className="App">
+    <div>
       <RecipeList recipes={recipes} />
     </div>
   );
