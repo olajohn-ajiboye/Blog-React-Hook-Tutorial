@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import RecipeDetails from './RecipeDetails'
 
 export default function Recipe({ recipe }) {
-  const { image_url, publisher, title, recipe_id } = recipe
   const [showInfo, setShowInfo] = useState(false)
   const [recipeDetails, setRecipeDetails] = useState([])
+  const { image_url, publisher, title, recipe_id } = recipe
   const { ingredients, social_rank } = recipeDetails
 
   const handleShowInfo = async (e) => {
@@ -25,16 +26,8 @@ export default function Recipe({ recipe }) {
             </h6>
           </div>
           <div className="card-footer">
-            <button type="button" style={{ margin: `13px` }} className="btn btn-primary text-center" data-id={recipe_id} onClick={handleShowInfo}>More Info</button>
-            {showInfo &&
-              <button key={recipe_id} type="button" style={{ margin: `13px` }} className="btn btn-success text-center font-weight-bold" >{social_rank}</button>}
-            {showInfo ?
-              ingredients.map((i, index) => {
-                return <ul key={index} className="list-group">
-                  <li className="list-group-item" >{i}</li>
-                </ul>
-              })
-              : null}
+            <button type="button" style={{ margin: `13px` }} className="btn btn-primary text-center" data-id={recipe_id} onClick={handleShowInfo}>Ingredients</button>
+            <RecipeDetails key={recipe_id} ingredients={ingredients} social_rank={social_rank} showInfo={showInfo} />
           </div>
         </div>
       </div>
