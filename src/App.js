@@ -3,8 +3,8 @@ import RecipeList from './components/RecipeList'
 
 
 function App() {
-  const apiKey = `36920f6651c9dcd9d91a6c3205cabaa19`
-  let url = `https://www.food2fork.com/ddapi/search?key=${apiKey}`
+  const apiKey = `7cdab426afc366070dab735500555521`
+  let url = `https://www.food2fork.com/api/search?key=${apiKey}`
   const [showHomeButton, setShowHomeButton] = useState(false)
   const [recipes, setRecipes] = useState([])
   const [loading, setLoading] = useState(true)
@@ -19,10 +19,7 @@ function App() {
       setLoading(false)
     } catch (e) {
       if (e) {
-        const recipeData = await fetch(`https://api.myjson.com/bins/t7szj`)
-        const { recipes } = await recipeData.json()
-        setRecipes(recipes)
-        setLoading(false)
+        console.log(e.message, 'Try updating the API key in App.js')
       }
     }
   }
@@ -44,7 +41,7 @@ function App() {
     setSearch(e.target.value)
   }
   const handleReturnHome = () => {
-    // fetchRecipe()
+    fetchRecipe()
   }
   useEffect(() => {
     fetchRecipe()
