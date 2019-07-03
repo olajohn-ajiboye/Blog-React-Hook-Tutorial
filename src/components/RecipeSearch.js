@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { RecipeContext } from '../context/index'
 
-export default function RecipeSearch({ handleSubmit, handleSearchChange }) {
+export default function RecipeSearch() {
+  const appContext = useContext(RecipeContext)
+  const { handleSubmit, handleSearchChange } = appContext
+
   return (
     <div className="container d-flex justify-content-center my-5">
       <form className="form-inline" onSubmit={(e) => handleSubmit(e)}>

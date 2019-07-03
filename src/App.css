@@ -2,3 +2,8 @@
   transition: visibility 0s,
     opacity 0.5s linear;
 }
+
+.card-footer {
+  transition: visibility 2s,
+    opacity 5s linear;
+}

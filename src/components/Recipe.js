@@ -8,11 +8,16 @@ export default function Recipe({ recipe }) {
   const { ingredients, social_rank } = recipeDetails
 
   const handleShowInfo = async (e) => {
-    const { id } = e.target.dataset
-    const response = await fetch(`https://www.food2fork.com/api/get?key=7cdab426afc366070dab735500555521&rId=${id}`)
-    const { recipe } = await response.json()
-    setRecipeDetails(recipe)
-    setShowInfo(!showInfo)
+    try {
+      const { id } = e.target.dataset
+      const response = await fetch(`https://www.food2fork.com/api/get?key=7cdab426afc366070dab735500555521&rId=${id}`)
+      const { recipe } = await response.json()
+      setRecipeDetails(recipe)
+      setShowInfo(!showInfo)
+    } catch (e) {
+      console.log(e)
+    }
+
   }
   return (
     <>
