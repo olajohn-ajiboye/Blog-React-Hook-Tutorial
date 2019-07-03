@@ -2,7 +2,11 @@ import React from 'react'
 import Recipe from './Recipe'
 import RecipeSearch from './RecipeSearch'
 
-export default function RecipeList({ recipes, handleSubmit, handleSearchChange, showHomeButton, handleReturnHome }) {
+export default function RecipeList({ recipes,
+  handleSubmit,
+  handleSearchChange,
+  showHomeButton,
+  handleReturnHome }) {
 
   return (
     <>

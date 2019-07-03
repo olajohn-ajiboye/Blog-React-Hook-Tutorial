@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default function RecipeSearch({ handleSubmit, handleSearchChange }) {
+export default function RecipeSearch({
+  handleSubmit,
+  handleSearchChange }) {
   return (
     <div className="container d-flex justify-content-center my-5">
       <form className="form-inline" onSubmit={(e) => handleSubmit(e)}>
