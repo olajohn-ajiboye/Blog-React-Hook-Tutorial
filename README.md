@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+##
+This is repositiry is part of my React Hook tutorials. Found at [dev.to](https://dev.to/mongopark/let-s-learn-react-hooks-and-context-api-by-building-a-recipe-search-app-39pc)
+
 ## Available Scripts
 
 In the project directory, you can run:
